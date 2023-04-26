@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+</head>
+<body>
+	
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style type="text/css">
+		/* Basic styles for the calculator */
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		#calculator {
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #ccc;
+			margin: 0 auto;
+			padding: 20px;
+			width: 350px;
+		}
+
+		input[type="button"] {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 5px;
+			width:60px;
+			height: 50px;
+		}
+
+		input[type="text"] {
+			width: 95%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin: 0 30px 0 0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<div id="calculator">
+		<input type="text" id="result" name="result" readonly="readonly" />
+
+		<input type="button" value="1" onclick="append('1')" />
+		<input type="button" value="2" onclick="append('2')" />
+		<input type="button" value="3" onclick="append('3')" />
+		<input type="button" value="+" onclick="append('+')" />
+		<input type="button" value="%" onclick="append('%')" /><br />
+
+		<input type="button" value="4" onclick="append('4')" />
+		<input type="button" value="5" onclick="append('5')" />
+		<input type="button" value="6" onclick="append('6')" />
+		<input type="button" value="-" onclick="append('-')" />
+		<input type="button" value="del" onclick="delete('del')"/>
+		<br />
+
+		<input type="button" value="7" onclick="append('7')" />
+		<input type="button" value="8" onclick="append('8')" />
+		<input type="button" value="9" onclick="append('9')" />
+		<input type="button" value="*" onclick="append('*')" />
+		<input type="button" value ='←' onclick ="Back('←')"/>
+		<br />
+		<input type="button" value="." onclick="append('.')" />
+		<input type="button" value="0" onclick="append('0')" />
+		<input type="button" value="=" onclick="calculate()" />
+		<input type="button" value="/" onclick="append('/')" />
+		<input type="button" value="C" onclick="clearResult()" />
+	</div>
+
+	<script type="text/javascript">
+		// Function to append a value to the input field
+		function append(value) {
+			document.getElementById('result').value += value;
+		}
+
+		// Function to clear the input field
+		function clearResult() {
+			document.getElementById('result').value = '';
+		}
+
+		// Function to calculate the result of the input field
+		function calculate() {
+			var result = eval(document.getElementById('result').value);
+			document.getElementById('result').value = result;
+		}
+		function Back() {
+            var ev = document.getElementById('res');
+               ev.value = ev.value.slice(0,-1);
+         }
+	</script>
+</body>
+</html>
